@@ -15,11 +15,11 @@
   "allActors"
   (gethash
    "data"
-   (graphql-request movies "
-query ($name: String!) {
-  allActors(filter: {name_starts_with: $name}) {
-    id
-    name
-  }
-}
-" (list (cons 'name "A"))))))
+   (graphql-request movies
+                    "query ($name: String!) {
+                       allActors(filter: {name_starts_with: $name}) {
+                         id
+                         name
+                       }
+                     }"
+                    (list (cons 'name "A"))))))
